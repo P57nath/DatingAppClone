@@ -1,6 +1,5 @@
-﻿using DatingApp.Data;
+using DatingApp.Data;
 using DatingApp.Entities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
