@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +8,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'Dating App';
+  items: MenuItem[] = [];
 
-  users: any;
-
-  constructor(private http: HttpClient) {}
-
-  ngOnInit() :void {
-    this.http.get('https://localhost:5001/api/users').subscribe({
-      next: (response: any) => this.users = response,
-      error: (error: any) => console.log(error),
-      complete: () => console.log('Request completed')
-    });
+  ngOnInit(): void {
+    this.items = [
+      { label: 'Home', icon: 'pi pi-home', routerLink: '/' },
+      { label: 'PrimeNG Demo', icon: 'pi pi-star', routerLink: '/user-demo' }
+    ];
   }
 }

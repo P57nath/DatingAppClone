@@ -15,12 +15,14 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService, ConfirmationService } from 'primeng/api';
-
+import { HomeComponent } from './home/home.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserDemoComponent
+    UserDemoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,9 @@ import { MessageService, ConfirmationService } from 'primeng/api';
     FormsModule,
     InputTextModule,
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    MenubarModule
+    
   ],
   providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent]

@@ -1,0 +1,23 @@
+.app-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafc;
+  min-height: 100vh;
+}
+
+.p-menubar {
+  background: #ffffff !important;
+  border: none;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.content {
+  padding: 2rem;
+}
+
+.text-primary {
+  color: #007ad9;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}

@@ -1,15 +1,19 @@
-<!-- <h1>{{ title }}</h1>
-
-<p-button label="Click Me" icon="pi pi-check"></p-button>
-
-<ul>
-  <li *ngFor="let user of users">
-    {{ user.id }} - {{ user.userName }}
-  </li>
-</ul>
-
-<p *ngIf="users.length === 0">No users found.</p>    -->
 <!-- app.component.html -->
-<h1>{{ title }} User demo</h1>
-<hr />
-<router-outlet></router-outlet>
+<div class="app-container">
+  <p-menubar [model]="items" class="p-shadow-3 border-round mb-3">
+    <ng-template pTemplate="start">
+      <div class="flex align-items-center gap-2">
+        <i class="pi pi-users text-primary text-2xl"></i>
+        <span class="font-bold text-lg">Dating App</span>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="end">
+      <button pButton type="button" icon="pi pi-user" label="Profile" class="p-button-text"></button>
+    </ng-template>
+  </p-menubar>
+
+  <div class="content px-4 py-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>
