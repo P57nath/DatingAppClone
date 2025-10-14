@@ -1,14 +1,16 @@
 .card {
-  padding: 2rem;
-  margin: 2rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border-radius: 10px;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.mt-3 {
-  margin-top: 1rem;
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.me-2 {
-  margin-right: 0.5rem;
+th {
+  background-color: #f4f4f4;
 }
