@@ -1,5 +1,6 @@
 using DatingApp.Data;
 using Microsoft.EntityFrameworkCore;
+using WebAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,9 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 // Add controllers
 builder.Services.AddControllers();
+
+
+builder.Services.AddScoped<TokenService>();
 
 // Configure CORS
 builder.Services.AddCors(options =>
