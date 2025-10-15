@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { MenubarModule } from 'primeng/menubar';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { RegisterComponent } from './auth/register/register.component';
     InputTextModule,
     ToastModule,
     ConfirmDialogModule,
-    MenubarModule
+    MenubarModule,
+    CardModule
     
   ],
   providers: [MessageService, ConfirmationService],
