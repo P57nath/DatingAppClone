@@ -27,5 +27,12 @@ app.UseCors("AllowAngularApp");
 // Map controllers
 app.MapControllers();
 
+// // 🔹 Seed Data
+// using var scope = app.Services.CreateScope();
+// var services = scope.ServiceProvider;
+// var context = services.GetRequiredService<DataContext>();
+// await context.Database.MigrateAsync();
+// await SeedData.SeedUsers(context);
+
 // Run the app
 app.Run();
