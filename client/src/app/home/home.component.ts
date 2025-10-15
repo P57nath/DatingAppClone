@@ -10,7 +10,6 @@ export class HomeComponent implements OnInit {
   title = 'Dating App';
   users: any;
   currentYear = new Date().getFullYear();
-
   genderOptions = [
     { label: 'Male', value: 'male' },
     { label: 'Female', value: 'female' },
@@ -31,4 +30,25 @@ export class HomeComponent implements OnInit {
       complete: () => console.log('Request completed')
     });
   }
+
+  loveStories = [
+  {
+    couple: 'Manfred & Echo',
+    title: 'Across the World to Love',
+    description: 'They found each other across continents — now happily married.',
+    photo: 'assets/couple1.jpg'
+  },
+  {
+    couple: 'Sakib Khan & Apu Biswas',
+    title: 'From Chat to Forever',
+    description: 'A casual chat turned into a lifelong connection full of joy.',
+    photo: 'assets/couple2.jpg'
+  },
+  {
+    couple: 'Romeo & Juliet',
+    title: 'A Love Built on Trust',
+    description: 'They met online and built a beautiful family together.',
+    photo: '/assets/couple3.jpg'
+  }
+];
 }

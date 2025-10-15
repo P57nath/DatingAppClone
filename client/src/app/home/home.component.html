@@ -16,10 +16,9 @@
             <label>I am a:</label>
             <p-dropdown [options]="genderOptions" [(ngModel)]="selectedGender" placeholder="Select"></p-dropdown>
           </div>
-
           <div class="field">
             <label>Seeking a:</label>
-            <p-dropdown [options]="genderOptions" [(ngModel)]="seekingGender" placeholder="Select"></p-dropdown>
+            <p-dropdown [options]="genderOptions" [(ngModel)]="seekingGender" placeholder="Select"></p-dropdown> 
           </div>
 
           <div class="field flex align-items-center justify-content-between">
@@ -30,7 +29,8 @@
           </div>
 
           <button pButton label="Take a Chance" routerLink="/login" class="p-button-danger w-full mt-3"></button>
-          <button pButton label="Sign in with Google" routerLink="/login" icon="pi pi-google" class="p-button-outlined w-full mt-3"></button>
+          <button pButton label="Sign in with Google" routerLink="/login" icon="pi pi-google"
+            class="p-button-outlined w-full mt-3"></button>
         </div>
       </div>
     </div>
@@ -44,23 +44,84 @@
 
   <div class="members-grid">
     <div class="member-card" *ngFor="let user of users.slice(0,5)">
-      <img
-        [src]="user.photoUrl || '/assets/default-user.webp'"
-        alt="{{ user.knownAs || user.userName }}"
-        class="member-photo"
-      />
+      <img [src]="user.photoUrl || '/assets/default-user.webp'" alt="{{ user.knownAs || user.userName }}"
+        class="member-photo" />
       <h3>{{ user.knownAs || user.userName }}</h3>
       <p>Age: {{ user.age || '—' }}</p>
       <p>City: {{ user.city || 'Unknown' }}</p>
-      <button
-        pButton
-        label="View Profile"
-        icon="pi pi-eye"
-        class="p-button-rounded p-button-outlined p-button-danger"
-      ></button>
+      <button pButton label="View Profile" icon="pi pi-eye"
+        class="p-button-rounded p-button-outlined p-button-danger"></button>
     </div>
   </div>
 </section>
+
+<!-- 💖 Dating Features Section -->
+<section class="p-5 bg-light features-section">
+  <div class="features-grid">
+    <div class="feature-card">
+      <h3>🛡️ Protection</h3>
+      <p>Your safety is supported by dedicated anti-scam systems.</p>
+    </div>
+    <div class="feature-card">
+      <h3>💬 Communication</h3>
+      <p>Chat, send letters, call, share your photos and make presents.</p>
+    </div>
+    <div class="feature-card">
+      <h3>✅ Verification</h3>
+      <p>Members with verification signs have provided their Government-issued ID for verification purposes.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🌍 Community</h3>
+      <p>Our community consists of paying members and free users.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 💞 Real Love Stories Section -->
+<section class="love-stories-section p-5 bg-white">
+  <div class="text-center mb-5">
+    <h2 class="text-gray-800 font-bold text-3xl mb-2">Real Love Stories</h2>
+    <p class="text-gray-600">Real love stories last forever 💖</p>
+  </div>
+
+  <!-- Banner -->
+  <div class="text-center mb-5">
+    <img src="assets/love-banner.webp" alt="Love Stories" class="stories-banner shadow-3 border-round" />
+  </div>
+
+  <!-- PrimeNG Grid Layout -->
+  <div class="grid justify-content-center">
+    <div class="col-12 md:col-4" *ngFor="let story of loveStories">
+      <p-card [header]="story.title" [subheader]="story.couple" styleClass="story-card shadow-3 border-round-lg">
+        <ng-template pTemplate="header">
+          <img [src]="story.photo" alt="{{ story.couple }}" class="story-photo border-round-top" />
+        </ng-template>
+
+        <p>{{ story.description }}</p>
+
+        <ng-template pTemplate="footer">
+          <button pButton label="Read Story" icon="pi pi-heart" class="p-button-danger w-full"></button>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</section>
+
+
+<!-- 🌏 About Dating Philosophy -->
+<section class="p-5 bg-light about-section">
+  <div class="about-container">
+    <h2 class="text-3xl font-bold mb-4 text-gray-800">Dating is a Joyful Experience</h2>
+    <p>
+      Sometimes we lose sight of this truth in our search for the right match. But finding someone special is perhaps
+      the most valuable experience we’ll ever have.
+      Forget swiping left or right — focus on real emotions, instincts, and joy. DatingApp is all about exploring the
+      world, expressing emotions, and sparking amazing memories.
+      Be daring, original, and let happiness be your guiding light.
+    </p>
+  </div>
+</section>
+
 
 
 

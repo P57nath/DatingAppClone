@@ -22,6 +22,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { CardModule } from 'primeng/card';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     MenubarModule,
     DropdownModule,
     InputNumberModule,
+    AutoCompleteModule,
     CardModule
     
   ],

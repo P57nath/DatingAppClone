@@ -81,6 +81,101 @@ p-card:hover {
   object-fit: cover;
   margin-bottom: 1rem;
 }
+/* Features Section */
+.features-section {
+  text-align: center;
+  margin-top: 4rem;
+}
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.feature-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+.feature-card h3 {
+  color: #e63946;
+  margin-bottom: 0.5rem;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background: #fff;
+}
+.stories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.story-card {
+  background: #f9f9f9;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.story-card h3 {
+  color: #e63946;
+  margin-bottom: 0.5rem;
+}
+
+/* About Section */
+.about-section {
+  background: #fefefe;
+  text-align: center;
+}
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.about-container p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.love-stories-section {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.stories-banner {
+  width: 60%;
+  max-height: 350px; 
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.story-photo {
+  width: 20%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.story-card {
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
 
 
 
