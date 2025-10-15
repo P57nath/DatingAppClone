@@ -11,6 +11,17 @@ export class HomeComponent implements OnInit {
   users: any;
   currentYear = new Date().getFullYear();
 
+  genderOptions = [
+    { label: 'Male', value: 'male' },
+    { label: 'Female', value: 'female' },
+    { label: 'Other', value: 'other' }
+  ];
+
+  selectedGender: string | undefined;
+  seekingGender: string | undefined;
+  ageFrom = 18;
+  ageTo = 35;
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {

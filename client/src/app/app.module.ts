@@ -20,6 +20,9 @@ import { MenubarModule } from 'primeng/menubar';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { CardModule } from 'primeng/card';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputNumberModule } from 'primeng/inputnumber';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +45,8 @@ import { CardModule } from 'primeng/card';
     ToastModule,
     ConfirmDialogModule,
     MenubarModule,
+    DropdownModule,
+    InputNumberModule,
     CardModule
     
   ],

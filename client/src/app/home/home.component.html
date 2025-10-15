@@ -1,28 +1,68 @@
-<!-- Hero Section -->
-<section class="hero-section text-center text-white flex align-items-center justify-content-center flex-column">
-  <div class="overlay"></div>
-  <div class="content">
-    <h1 class="display-3 font-bold mb-3">Find Your Perfect Match 💘</h1>
-    <p class="fs-5 mb-4">Join thousands of singles connecting every day.</p>
-    <button pButton label="Join Now" routerLink="/login" class="p-button-rounded p-button-lg p-button-primary"></button>
-  </div>
-</section>
+<!-- 🌹 Hero Section -->
+<section class="hero">
+  <div class="overlay">
+    <div class="hero-content">
+      <div class="hero-card p-5 border-round shadow-4">
+        <div class="text-center mb-4">
+          <img src="assets/heart-logo.jpg" alt="Dating Logo" class="logo mb-3" />
+          <h2 class="text-900 font-bold mb-2">Your World. Your Love.</h2>
+          <p class="text-600 mb-4">
+            Join the dating site where you could meet anyone, anywhere!
+          </p>
+        </div>
 
-<!-- Browse Users -->
-<section class="p-5 bg-white">
-  <h2 class="text-center text-gray-800 mb-4">Meet Our Members</h2>
+        <div class="p-fluid">
+          <div class="field">
+            <label>I am a:</label>
+            <p-dropdown [options]="genderOptions" [(ngModel)]="selectedGender" placeholder="Select"></p-dropdown>
+          </div>
 
-  <div class="grid">
-    <div class="col-12 md:col-4" *ngFor="let user of users">
-      <p-card class="shadow-3 text-center border-round-lg">
-        <i class="pi pi-user text-pink-500 text-4xl mb-3"></i>
-        <h3>{{ user.userName }}</h3>
-        <p>Age: {{ user.age || '—' }}</p>
-        <p>Location: {{ user.city || 'Unknown' }}</p>
-      </p-card>
+          <div class="field">
+            <label>Seeking a:</label>
+            <p-dropdown [options]="genderOptions" [(ngModel)]="seekingGender" placeholder="Select"></p-dropdown>
+          </div>
+
+          <div class="field flex align-items-center justify-content-between">
+            <label>Between ages:</label>
+            <p-inputNumber [(ngModel)]="ageFrom" [min]="18" [max]="80"></p-inputNumber>
+            <span class="mx-2">and</span>
+            <p-inputNumber [(ngModel)]="ageTo" [min]="18" [max]="80"></p-inputNumber>
+          </div>
+
+          <button pButton label="Take a Chance" routerLink="/login" class="p-button-danger w-full mt-3"></button>
+          <button pButton label="Sign in with Google" routerLink="/login" icon="pi pi-google" class="p-button-outlined w-full mt-3"></button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+
+<!-- Browse Users -->
+<section class="p-5 bg-white">
+  <h2 class="text-center text-gray-800 mb-5 font-bold text-3xl">Meet Our Members</h2>
+
+  <div class="members-grid">
+    <div class="member-card" *ngFor="let user of users.slice(0,5)">
+      <img
+        [src]="user.photoUrl || '/assets/default-user.webp'"
+        alt="{{ user.knownAs || user.userName }}"
+        class="member-photo"
+      />
+      <h3>{{ user.knownAs || user.userName }}</h3>
+      <p>Age: {{ user.age || '—' }}</p>
+      <p>City: {{ user.city || 'Unknown' }}</p>
+      <button
+        pButton
+        label="View Profile"
+        icon="pi pi-eye"
+        class="p-button-rounded p-button-outlined p-button-danger"
+      ></button>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- Footer -->
 <footer class="p-4 text-center bg-gray-900 text-white mt-5">
