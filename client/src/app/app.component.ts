@@ -13,7 +13,9 @@ export class AppComponent {
   ngOnInit(): void {
     this.items = [
       { label: 'Home', icon: 'pi pi-home', routerLink: '/' },
-      { label: 'PrimeNG Demo', icon: 'pi pi-star', routerLink: '/user-demo' }
+      { label: 'Login', icon: 'pi pi-sign-in', routerLink: '/login' },
+      { label: 'Register', icon: 'pi pi-user-plus', routerLink: '/register' },
+      { label: 'User Demo', icon: 'pi pi-users', routerLink: '/user-demo' }
     ];
   }
 }
