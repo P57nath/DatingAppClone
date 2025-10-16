@@ -48,12 +48,6 @@ namespace WebAPI.Migrations
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Interests")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Introduction")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("KnownAs")
                         .HasColumnType("nvarchar(max)");
 
@@ -72,6 +66,10 @@ namespace WebAPI.Migrations
                         .HasColumnType("varbinary(max)");
 
                     b.Property<string>("PhotoUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserEmail")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")

@@ -21,7 +21,7 @@ export class LoginComponent {
     this.authService.login(this.model).subscribe({
       next: () => {
         this.messageService.add({ severity: 'success', summary: 'Welcome!', detail: 'Login successful.' });
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/user-demo');
       },
       error: (err) => {
         this.messageService.add({ severity: 'error', summary: 'Login Failed', detail: 'Invalid credentials.' });

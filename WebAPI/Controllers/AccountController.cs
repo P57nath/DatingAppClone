@@ -26,12 +26,21 @@ namespace WebAPI.Controllers
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
             if (await UserExists(registerDto.Username)) return BadRequest("Username is taken");
+            if (await EmailExists(registerDto.Useremail)) return BadRequest("Email is already registered");
 
             using var hmac = new HMACSHA512();
 
             var user = new AppUser
             {
-                UserName = registerDto.Username.ToLower(),
+                UserName = registerDto.Username.ToString(),
+                UserEmail = registerDto.Useremail.ToString(),
+                City = "Unknown",
+                Country = "Unknown",
+                Gender = "Not Specified",
+                LookingFor = "Not Specified",
+                Age = Random.Shared.Next(18, 80),
+                DateOfBirth = DateTime.UtcNow.AddYears(-Random.Shared.Next(18, 80)),
+                KnownAs = registerDto.Username.ToString(),
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
                 PasswordSalt = hmac.Key
             };
@@ -42,6 +51,7 @@ namespace WebAPI.Controllers
             return new UserDto
             {
                 Username = user.UserName,
+                Useremail = user.UserEmail,
                 Token = _tokenService.CreateToken(user)
             };
         }
@@ -50,8 +60,9 @@ namespace WebAPI.Controllers
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
-            
+            //var email = await _context.Users.SingleOrDefaultAsync(x => x.UserEmail == loginDto.Useremail.ToLower());
             if (user == null) return Unauthorized("Invalid username");
+            //if (email == null) return Unauthorized("Invalid email");
 
             using var hmac = new HMACSHA512(user.PasswordSalt);
             var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
@@ -64,19 +75,26 @@ namespace WebAPI.Controllers
             return new UserDto
             {
                 Username = user.UserName,
+                Useremail = user.UserEmail,
                 Token = _tokenService.CreateToken(user)
             };
         }
 
         private async Task<bool> UserExists(string username)
         {
-            return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
+            return await _context.Users.AnyAsync(x => x.UserName == username.ToString());
+        }
+        private async Task<bool> EmailExists(string useremail)
+        {
+            return await _context.Users.AnyAsync(x => x.UserEmail == useremail.ToString());
         }
     }
 
     public class UserDto
     {
         public required string Username { get; set; }
+
+        public required string Useremail { get; set; }
         public required string Token { get; set; }
     }
 }

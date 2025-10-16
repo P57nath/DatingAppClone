@@ -3,6 +3,8 @@ namespace DatingApp.Entities
     public class AppUser
     {
         public int Id { get; set; }
+
+        public required string UserEmail { get; set; }  
         public required string UserName { get; set; }
         public string? Gender { get; set; }
 
@@ -16,11 +18,7 @@ namespace DatingApp.Entities
 
         public DateTime LastActive { get; set; } = DateTime.UtcNow;
 
-        public string? Introduction { get; set; }
-
         public string? LookingFor { get; set; }
-
-        public string? Interests { get; set; }
 
         public string? City { get; set; }
 
