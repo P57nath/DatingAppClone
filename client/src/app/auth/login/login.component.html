@@ -1,30 +1,49 @@
-<div class="login-page flex align-items-center justify-content-center min-h-screen bg-cover bg-center"
-     style="background-image: url('assets/bg-dating.jpg');">
-
-  <p-card class="shadow-4 border-round-xl w-full sm:w-30rem" style="background-color: rgba(255,255,255,0.95)">
+<div
+  class="login-page flex align-items-center justify-content-center min-h-screen bg-cover bg-center"
+  style="background-image: url('assets/bg-dating.jpg');"
+>
+  <p-card class="login-card shadow-6 border-round-xl w-full sm:w-30rem">
     <div class="text-center mb-4">
-      <i class="pi pi-heart text-pink-500 text-4xl mb-2"></i>
-      <h2 class="text-2xl font-bold text-gray-800">Welcome to DatingApp</h2>
-      <p class="text-gray-600">Login to find your perfect match 💞</p>
+      <i class="pi pi-heart-fill text-pink-500 text-5xl mb-3 heart-icon"></i>
+      <h2 class="text-2xl font-bold text-gray-800 mb-2">Welcome to DatingApp</h2>
+      <p class="text-gray-600 mb-4">Login to find your perfect match 💞</p>
     </div>
 
     <form #loginForm="ngForm" (ngSubmit)="login()">
       <div class="p-fluid">
         <div class="field">
           <label for="username" class="block mb-2 font-medium">Username</label>
-          <input id="username" type="text"  pInputText [(ngModel)]="model.username" name="username" required />
+          <input
+            id="username"
+            type="text"
+            pInputText
+            [(ngModel)]="model.username"
+            name="username"
+            required
+            placeholder="Enter your username"
+          />
         </div>
 
         <div class="field mt-3">
           <label for="password" class="block mb-2 font-medium">Password</label>
-          <input id="password" type="password" pInputText [(ngModel)]="model.password" name="password" required />
+          <input
+            id="password"
+            type="password"
+            pInputText
+            [(ngModel)]="model.password"
+            name="password"
+            required
+            placeholder="Enter your password"
+          />
         </div>
 
-        <button pButton type="submit" label="Login" icon="pi pi-sign-in" class="w-full mt-4 p-button-rounded p-button-primary"></button>
-
+        <div class="btn-width">
+          <button pButton type="submit" label="Login" icon="pi pi-sign-in"
+            class=" mt-4 p-button-rounded p-button-danger login-btn"></button>
+        </div>
         <div class="text-center mt-3">
-          <span class="text-sm text-gray-600">Don’t have an account? </span>
-          <a routerLink="/register" class="text-pink-500 hover:underline">Register</a>
+          <span class="text-sm text-gray-600">Don’t have an account?</span>
+          <a routerLink="/register" class="text-pink-500 hover:underline fw-bold ms-1">Register</a>
         </div>
       </div>
     </form>
