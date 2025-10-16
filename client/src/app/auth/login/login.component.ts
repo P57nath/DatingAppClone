@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
@@ -12,16 +12,15 @@ export class LoginComponent {
   model: any = {};
 
   constructor(
-    private http: HttpClient,
+    private authService: AuthService,
     private router: Router,
     private messageService: MessageService
   ) {}
 
   login() {
-    this.http.post('https://localhost:5001/api/account/login', this.model).subscribe({
-      next: (response: any) => {
+    this.authService.login(this.model).subscribe({
+      next: () => {
         this.messageService.add({ severity: 'success', summary: 'Welcome!', detail: 'Login successful.' });
-        localStorage.setItem('user', JSON.stringify(response));
         this.router.navigateByUrl('/');
       },
       error: (err) => {

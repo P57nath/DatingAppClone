@@ -50,7 +50,7 @@ namespace WebAPI.Controllers
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
-
+            
             if (user == null) return Unauthorized("Invalid username");
 
             using var hmac = new HMACSHA512(user.PasswordSalt);
@@ -76,7 +76,7 @@ namespace WebAPI.Controllers
 
     public class UserDto
     {
-        public string Username { get; set; }
-        public string Token { get; set; }
+        public required string Username { get; set; }
+        public required string Token { get; set; }
     }
 }

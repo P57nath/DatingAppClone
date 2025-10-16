@@ -43,7 +43,7 @@
   <h2 class="text-center text-gray-800 mb-5 font-bold text-3xl">Meet Our Members</h2>
 
   <div class="members-grid">
-    <div class="member-card" *ngFor="let user of users.slice(0,5)">
+    <div class="member-card" *ngFor="let user of users?.slice(0,5)">
       <img [src]="user.photoUrl || '/assets/default-user.webp'" alt="{{ user.knownAs || user.userName }}"
         class="member-photo" />
       <h3>{{ user.knownAs || user.userName }}</h3>
