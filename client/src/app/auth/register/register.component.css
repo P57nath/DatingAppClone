@@ -1,0 +1,76 @@
+/* Wrapper with background image */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 1rem;
+}
+
+p-card.login-card {
+  width: 100% !important;
+  padding: 1rem;
+  max-width: 470px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+
+
+/* Icon animation */
+.heart-icon {
+  animation: beat 1.6s infinite ease-in-out;
+}
+
+/* Input fields */
+.field input[pinputtext] {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.field input[pinputtext]:focus {
+  border-color: #e91e63;
+  box-shadow: 0 0 5px rgba(233, 30, 99, 0.3);
+}
+
+/* Button hover effect */
+.login-btn:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+/* Register link */
+a {
+  color: #e91e63;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.text-center {
+  text-align: center;
+}
+.btn-width {
+  width: 50%;
+  margin: 5px auto;
+}
