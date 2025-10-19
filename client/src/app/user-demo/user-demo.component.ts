@@ -5,6 +5,15 @@ import { MessageService, ConfirmationService } from 'primeng/api';
 interface User {
   id?: number;
   userName: string;
+  userEmail?: string;
+  city?: string;
+  country?: string;
+  gender?: string;
+  age?: number;
+  dateOfBirth?: Date;
+  knownAs?: string;
+  lokingFor?: string;
+  photoUrl?: string;
 }
 
 @Component({
@@ -16,7 +25,7 @@ interface User {
 export class UserDemoComponent implements OnInit {
   users: User[] = [];
   userDialog: boolean = false;
-  user: User = { userName: '' };
+  user: User = { userName: ''};
   submitted: boolean = false;
   apiUrl = 'https://localhost:5001/api/users';
 
